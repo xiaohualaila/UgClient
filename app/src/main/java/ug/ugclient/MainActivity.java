@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity  {
 
     private void intDialog() {
         dialog = new ZLoadingDialog(MainActivity.this);
-        dialog.setLoadingBuilder(Z_TYPE.SINGLE_CIRCLE)
+        dialog.setLoadingBuilder(Z_TYPE.ROTATE_CIRCLE)
                 .setLoadingColor(Color.GRAY)
                 .setHintText("Loading...")
 //              .setHintTextSize(16) // 设置字体大小
