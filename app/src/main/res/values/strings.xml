@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">一人一票</string>
+    <string name="error_net">网络无法连接</string>
+</resources>
