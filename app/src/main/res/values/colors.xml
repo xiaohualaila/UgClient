@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="wright">#ffffff</color>rgb20412
     <color name="bar_color">#cc000c</color>
+    <color name="gray">#b3adad</color>
+    <color name="black">#545353</color>
 </resources>

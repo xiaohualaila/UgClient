@@ -15,7 +15,9 @@ import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 import com.zyao89.view.zloading.ZLoadingDialog;
 import com.zyao89.view.zloading.Z_TYPE;
@@ -28,8 +30,9 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity  {
     @BindView(R.id.webView)
     WebView mWebView;
-    @BindView(R.id.not_net_img)
-    ImageView net_img;
+    @BindView(R.id.net_error_ll)
+    LinearLayout net_error_ll;
+
     private boolean isBackKeyPressed = false;
     private ZLoadingDialog dialog;
     @Override
@@ -56,21 +59,21 @@ public class MainActivity extends AppCompatActivity  {
         boolean isNetAble = NetUtil.isNetConnection(this);
         if (!isNetAble) {
             mWebView.setVisibility(View.GONE);
-            net_img.setVisibility(View.VISIBLE);
-            net_img.setImageResource(R.mipmap.ic_launcher);
+            net_error_ll.setVisibility(View.VISIBLE);
+
             Toast.makeText(this, getResources().getText(R.string.error_net), Toast.LENGTH_LONG).show();
         }else {
-            net_img.setVisibility(View.GONE);
+            net_error_ll.setVisibility(View.GONE);
             mWebView.setVisibility(View.VISIBLE);
             initWebView();
 
         }
     }
 
-    @OnClick({R.id.not_net_img})
+    @OnClick({R.id.flush_bt})
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.not_net_img:
+            case R.id.flush_bt:
                 iniData();
                 break;
         }
